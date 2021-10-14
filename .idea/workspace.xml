@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9cf3735-6c67-4fd5-8e71-9b593600ecd3" name="Changes" comment="" />
+    <list default="true" id="c9cf3735-6c67-4fd5-8e71-9b593600ecd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +24,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="bundle install" />
+    </option>
   </component>
   <component name="RunManager" selected="Rails.Development: sprint_2_project">
     <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
@@ -155,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634192022239</updated>
-      <workItem from="1634192023419" duration="886000" />
+      <workItem from="1634192023419" duration="1506000" />
     </task>
     <servers />
   </component>
