@@ -1,2 +1,37 @@
-<h3>Homepage</h3>
+<h1>Homepage</h1>
 <p>this is the mainpage displaying todays options</p>
+
+
+<!-- header -->
+<h2> Logo </h2>
+<h2><%= link_to 'All Meals', meals_path %></h2>
+<h2><%= link_to 'Groups', groups_path %></h2>
+<h2><%= link_to 'New Meal', new_meal_path %></h2>
+<h2><%= link_to 'My Lunch', dashboard_index_url %></h2>
+
+<!-- header end -->
+<br>
+<br>
+<br>
+<!-- body -->
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Title</th>
+    <th>Member</th>
+    <th>Tags</th>
+    <th>Upvotes</th>
+  </tr>
+
+  <% @meals.each do | meal |  %>
+    <tr>
+
+      <th>1</th>
+      <td><%= link_to meal.title, meal %></td>
+      <td><%= link_to meal.group, meal %></td>
+      <td><%= link_to meal.tags, meal %></td>
+      <td><%= link_to meal.upvotes, meal %></td>
+
+    </tr>
+  <% end %>
+</table>

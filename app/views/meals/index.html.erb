@@ -1,0 +1,11 @@
+
+
+<h1>Meals</h1>
+
+    <% @meals.each do |meal| %>
+
+        <p><%= link_to meal.title, meal %></p>
+
+    <% end %>
+
+<br>

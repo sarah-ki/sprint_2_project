@@ -1,0 +1,28 @@
+<h1><%= @meals.title %></h1>
+
+<h3>Ad A Comment</h3>
+<%= form_for @comment do|f| %>
+
+  <%= f.hidden_field :meal_id %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+
+    <%= f.submit "Post Comment" %>
+  </p>
+<% end %>
+
+
+<%= render :partial => 'partials/comment', :collection => @meals.comments %>
