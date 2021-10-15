@@ -1,6 +1,26 @@
 <h1><%= @meals.title %></h1>
+<p>
+  <%= @meals.recipe %>
+</p>
+<br/>
+<br/>
+<p>
+  <%= @meals.tags %>
+</p>
+<br/>
+<p>
+  Food for:
+  <%= @meals.due_date %>
+</p>
+<p>
+  created:
+  <%= @meals.created_at %>
+  by <%= @meals.user %>
+</p>
+<br/>
+<br/><br/>
 
-<h3>Ad A Comment</h3>
+<h3>Add A Comment</h3>
 <%= form_for @comment do|f| %>
 
   <%= f.hidden_field :meal_id %>

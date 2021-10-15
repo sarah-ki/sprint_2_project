@@ -27,6 +27,7 @@ class MealsController < InheritedResources::Base
 
     def create
       @meals = Meal.new(meal_params)
+      @meals.user = current_user
       if @meals.save
         redirect_to meals_path, notice: 'Success'
       else
