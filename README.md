@@ -21,7 +21,12 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+Funktionen
+--------------
+This Website offers people to join various groups in order to organise their lunch break. 
+
+Aufbau 
+-
 
 
 Funktionale Anforderungen
