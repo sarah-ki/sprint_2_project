@@ -3,7 +3,7 @@ class GroupsController < InheritedResources::Base
 
 
     def group_params
-      params.require(:group).permit(:members, :name, :description, :pw, :id)
+      params.require(:group).permit(:name, :description, :pw, :id, user_ids: [])
     end
 
   def index
@@ -13,6 +13,7 @@ class GroupsController < InheritedResources::Base
   def show
     @title = @group.name
     @meals = @group.meals
+    #@users = @group.user_ids
   end
 
   def set_group

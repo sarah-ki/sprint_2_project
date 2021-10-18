@@ -16,10 +16,14 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.members %></td>
+        <td><ul>
+          <% group.users.each do |user| %>
+            <li><%= user.email %></li>
+          <% end %>
+        </ul></td>
         <td><%= group.name %></td>
         <td><%= group.description %></td>
-        <td><%= group.pw %></td>
+        <td><%= link_to 'Join Group', edit_group_path(group) %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

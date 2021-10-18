@@ -1,28 +1,41 @@
 <h1><%= @meals.title %></h1>
+<p>
+  <%= @meals.recipe %>
+</p>
+<br/>
+<br/>
+<p>
+  <%= @meals.tags %>
+</p>
+<br/>
+<p>
+  Food for:
+  <%= @meals.due_date %>
+</p>
+<p>
+  created:
+  <%= @meals.created_at %>
+  by <%= @meals.user %>
+</p>
+<br/>
+<br/><br/>
 
-<h3>Ad A Comment</h3>
+<h3>Add A Comment</h3>
 <%= form_for @comment do|f| %>
-
   <%= f.hidden_field :meal_id %>
-
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
-
   <p>
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </p>
-
-    <%= f.submit "Post Comment" %>
+  <%= f.submit "Post Comment" %>
   </p>
 <% end %>
-
-
 <%= render :partial => 'partials/comment', :collection => @meals.comments %>
