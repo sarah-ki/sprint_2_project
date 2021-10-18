@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
   #1
-  # #2
+  # #2 2222222222222222222222222
 end
