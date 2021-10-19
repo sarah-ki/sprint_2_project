@@ -29,6 +29,7 @@ class MealsController < InheritedResources::Base
       @meals = Meal.new(meal_params)
       @meals.user = current_user
       if @meals.save
+        MealMailer.with(new_title: @meals.title).meal_created.deliver_now
         redirect_to meals_path, notice: 'Success'
       else
         render 'new'
