@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     @groups = Group.all
   end
 
+  def all_tags
+    @tags = Tags.all
+  end
+  # heroku run:detached rake db:migrate
 end

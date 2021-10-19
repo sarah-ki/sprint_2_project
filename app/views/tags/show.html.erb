@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tag.name %>
+</p>
+
+<p>
+  <strong>Uses:</strong>
+  <%= @uses %>
+</p>
+
+<% if @tag.meals.each do |meal| %>
+  <h2><%= link_to meal.title, meal %></h2>
+
+<% end.empty? %>
+  <p>Sorry, there are no Meals available with this tag.</p>
+
+  <% end  %>
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

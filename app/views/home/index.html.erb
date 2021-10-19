@@ -27,7 +27,6 @@ Site is designed to help you organise a time to eat, a place and a group (of fri
     <th>Title</th>
     <th>Group</th>
     <th>Tags</th>
-    <th>Upvotes</th>
   </tr>
 
   <% @meals.each do | meal |  %>
@@ -35,11 +34,14 @@ Site is designed to help you organise a time to eat, a place and a group (of fri
 
       <th>1</th>
       <td><%= link_to meal.title, meal %></td>
-      <td><%= link_to meal.group.name, meal %></td>
-      <td><%= link_to meal.tags, meal %></td>
-      <td><%= link_to meal.upvotes, meal %></td>
-    </tr>
+      <td><%= link_to meal.group.name, meal.group %></td>
 
+      <td><ul><% meal.tags.each do |tag|%>
+      <li><%= link_to tag.name, tag %></li>
+          <% end %>
+          </ul>
+          </td>
+    </tr>
 
 
   <% end %>

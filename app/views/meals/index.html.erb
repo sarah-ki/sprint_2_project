@@ -1,7 +1,10 @@
 
 
 <h1>Meals</h1>
-
+<form action="/search">
+    <input type="search" id="query" name="q" placeholder="Search...">
+    <button>Search</button>
+  </form>
     <% @meals.each do |meal| %>
 
         <p><%= link_to meal.title, meal %></p>

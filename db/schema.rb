@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_134522) do
+ActiveRecord::Schema.define(version: 2021_10_19_134424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2021_10_18_134522) do
     t.string "pw"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "meal_tag_joins", force: :cascade do |t|
+    t.bigint "meal_id"
+    t.bigint "tag_id"
+    t.index ["meal_id"], name: "index_meal_tag_joins_on_meals_id"
+    t.index ["tag_id"], name: "index_meal_tag_joins_on_tags_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -56,6 +63,13 @@ ActiveRecord::Schema.define(version: 2021_10_18_134522) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "uses"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_groups_joins", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "group_id", null: false
@@ -74,6 +88,8 @@ ActiveRecord::Schema.define(version: 2021_10_18_134522) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean "admin", default: false, null: false
+    t.boolean "approved", default: true, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

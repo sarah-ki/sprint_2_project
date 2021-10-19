@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c9cf3735-6c67-4fd5-8e71-9b593600ecd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/groups_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/groups_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/meals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/meals_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/meal.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/meal.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/groups/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/meals/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/meals/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/meals/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
@@ -211,7 +216,7 @@
       <workItem from="1634192023419" duration="27295000" />
       <workItem from="1634284008867" duration="7310000" />
       <workItem from="1634302355840" duration="3004000" />
-      <workItem from="1634623983453" duration="3110000" />
+      <workItem from="1634623983453" duration="16143000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;sdf&lt;sf 111111111">
       <created>1634539064592</created>
@@ -262,6 +267,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sprint_2_project@Development__sprint_2_project.rcov" NAME="Development: sprint_2_project Coverage Results" MODIFIED="1634540218600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sprint_2_project" />
-    <SUITE FILE_PATH="coverage/sprint_2_project@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1634624828590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sprint_2_project" />
+    <SUITE FILE_PATH="coverage/sprint_2_project@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1634636832228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sprint_2_project" />
   </component>
 </project>

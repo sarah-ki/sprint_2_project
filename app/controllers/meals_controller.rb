@@ -1,7 +1,9 @@
 class MealsController < InheritedResources::Base
+  before_action :authenticate_user!
+
   
     def meal_params
-      params.require(:meal).permit(:id, :title, :recipe, :user, :created, :due_date, :group_id, :tags, :upvotes, group_attributes: [:id, :name])
+      params.require(:meal).permit(:id, :title, :recipe, :user, :created, :due_date, :group_id, :upvotes, group_attributes: [:id, :name], tag_ids: [])
     end
 
     def index
@@ -38,6 +40,14 @@ class MealsController < InheritedResources::Base
 
     def destroy
 
+    end
+
+    def search
+      if params[:q].blank?
+        redirect_to meals_path
+      else
+        @results = Meal.all.where("lower(title) LIKE ?", "%"+params[:q]+"%")
+      end
     end
 
 end
