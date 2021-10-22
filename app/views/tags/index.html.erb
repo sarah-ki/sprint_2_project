@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= stylesheet_link_tag "tagcloud" %>
 <h1>Tags</h1>
 
 <table>
@@ -23,7 +23,21 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<br>
+<br>
+
+<ul class="cloud">
+  <% @cloud_tags.each do |tag| %>
+<li> <%= link_to tag.name, tag , data: { weight: tag.meals.count}%> </li>
+<% end %>
+
+
+</ul>
 
 <br>
 
 <%= link_to 'New Tag', new_tag_path %>
+
+<%= link_to 'Next Page', tags_path(page: @page + 1) %>
+<%= link_to 'Previous Page',  tags_path(page: @page - 1) %>

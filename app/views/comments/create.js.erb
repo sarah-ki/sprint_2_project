@@ -1,0 +1,10 @@
+<% if @comment.errors.any? %>
+window.alert("An Error occured");
+<% else %>
+
+document.querySelector('#comment_section').insertAdjacentHTML('beforeend', '<%= escape_javascript ( render partial: 'comment', locals: {comment: @comment}) %>');
+document.getElementById('comment_form').reset();
+
+<% end %>
+
+

@@ -2,9 +2,9 @@
 
 <p>
   <strong>Members:</strong>
-<ul>
+<ul class="list-group">
   <% @group.users.each do |user| %>
-      <li><%= user.email %></li>
+      <li class="list-group-item"><%= user.email %></li>
   <% end %>
 </ul>
 </p>
@@ -19,11 +19,8 @@
   <%= @group.description %>
 </p>
 
-<p>
-  <strong>Pw:</strong>
-  <%= @group.pw %>
-</p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
-<%= link_to 'Join', join_group_path(@group) %>
+<%= link_to 'Back', groups_path, type: "button", class: "btn" %>
+<%= link_to 'Edit', edit_group_path(@group) , type: "button", class: "btn btn-primary"%>
+
+<%= link_to 'Join', join_group_path(@group), type: "button", class: "btn btn-primary", method: :post %>

@@ -1,6 +1,8 @@
 class GroupsController < InheritedResources::Base
   before_action :set_group, only: %i[ show edit update destroy join leave]
   before_action :authenticate_user!
+  before_action :approval_check
+  before_action :authenticate_admin!, only: %i[edit update destroy]
 
 
     def group_params
@@ -8,7 +10,8 @@ class GroupsController < InheritedResources::Base
     end
 
   def index
-    @groups = Group.all
+    @page = params.fetch(:page, 0).to_i
+    @groups = Group.offset(@page * PAGING_HELPER).limit(PAGING_HELPER)
   end
 
   def show
@@ -27,8 +30,8 @@ class GroupsController < InheritedResources::Base
       flash[:notice] = "User joined"
     else
       flash[:alert] = "User already in group"
-      end
-      redirect_to group_path(@group)
+    end
+    redirect_to group_path(@group)
 
   end
 

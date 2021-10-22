@@ -1,10 +1,16 @@
 
 
 <h1>Meals</h1>
+
+
+<div class="input-group">
+  <div class="form-outline">
 <form action="/search">
-    <input type="search" id="query" name="q" placeholder="Search...">
-    <button>Search</button>
+    <input type="search" id="query" name="q" placeholder="Search..." class="form-control">
+    <button class="btn btn-outline-primary">Search</button>
   </form>
+  </div>
+</div>
     <% @meals.each do |meal| %>
 
         <p><%= link_to meal.title, meal %></p>
@@ -12,3 +18,5 @@
     <% end %>
 
 <br>
+<%= link_to 'Next Page', meals_path(page: @page + 1) %>
+<%= link_to 'Previous Page',  meals_path(page: @page - 1) %>

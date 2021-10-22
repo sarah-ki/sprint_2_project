@@ -1,48 +1,39 @@
-<h1>Homepage</h1>
-<p>Luncheon is a very old-fashioned word for lunch. Some say it is the most important meal of the day so it is important to plan. This
-Site is designed to help you organise a time to eat, a place and a group (of friends). Enjoy!</p>
-<p>This is the mainpage displaying todays options:</p>
 
+<h1>Homepage</h1>
+<p class="lead">Luncheon is a very old-fashioned word for lunch. Some say it is the most important meal of the day so it is important to plan. This
+Site is designed to help you organise a time to eat, a place and a group (of friends). Enjoy!</p>
 
 <!-- header -->
-<h2> Logo </h2>
-<h2><%= link_to 'All Meals', meals_path %></h2>
-<h2><%= link_to 'Groups', groups_path %></h2>
-<h2><%= link_to 'New Meal', new_meal_path %></h2>
-<h2><%= link_to 'My Lunch', dashboard_index_url %></h2>
-
-<h2><%= link_to 'Sign_up', new_user_registration_path %></h2>
-<h2><%= link_to 'Sign_in', new_user_session_path %></h2>
-<h2><%= link_to 'Sign_out', destroy_user_session_path, method: :delete %></h2>
-<h2><%= link_to 'Edit Data', edit_user_registration_path %></h2>
-
+<br>
+<br>
 <!-- header end -->
-<br>
-<br>
-<br>
+<p>This is the mainpage displaying todays options:</p>
 <!-- body -->
-<table>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+  <colgroup>
+    <col style="width: 33%">
+    <col style="width: 33%">
+    <col style="width: auto">
+  </colgroup>
   <tr>
-    <th>Rank</th>
     <th>Title</th>
     <th>Group</th>
     <th>Tags</th>
   </tr>
-
+  </thead>
+  <tbody>
   <% @meals.each do | meal |  %>
     <tr>
-
-      <th>1</th>
       <td><%= link_to meal.title, meal %></td>
       <td><%= link_to meal.group.name, meal.group %></td>
 
-      <td><ul><% meal.tags.each do |tag|%>
-      <li><%= link_to tag.name, tag %></li>
+      <td><div class="list-group"><% meal.tags.each do |tag|%>
+      <%= link_to tag.name, tag, class: "list-group-item list-group-item-action" %>
           <% end %>
-          </ul>
+          </div>
           </td>
     </tr>
-
-
   <% end %>
+  </tbody>
 </table>

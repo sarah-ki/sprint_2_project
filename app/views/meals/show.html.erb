@@ -1,13 +1,13 @@
-<h1><%= @meals.title %></h1>
+<h1><%= @meal.title %></h1>
 <p>
-  <%= @meals.recipe %>
+  <%= @meal.recipe %>
 </p>
 <br/>
 <br/>
 <p>
 The following tags have been added:
 <ul>
-  <% @meals.tags.each do |tag| %>
+  <% @meal.tags.each do |tag| %>
     <li><%= tag.name %></li>
   <% end %>
 </ul>
@@ -15,27 +15,21 @@ The following tags have been added:
 <br/>
 <p>
   Food for:
-  <%= @meals.due_date %>
+  <%= @meal.due_date %>
 </p>
 <p>
   created:
-  <%= @meals.created_at %>
-  by <%= @meals.user %>
+  <%= @meal.created_at %>
+  by <%= @meal.user %>
 </p>
-<br/>
-<br/><br/>
-
+<div class="mb-5">
+<%= link_to "Edit this meal", edit_meal_path, class: "btn btn-primary"  %>
+</div>
+<div id="comment_section">
 <h3>Add A Comment</h3>
-<%= form_for @comment do|f| %>
-  <%= f.hidden_field :meal_id %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
+<%= form_with model: @comment, id: "comment_form", local: false, url: meal_comments_path(@meal) do|f| %>
+
+
   <p>
     <%= f.label :body %><br />
     <%= f.text_area :body %>
@@ -43,4 +37,7 @@ The following tags have been added:
   <%= f.submit "Post Comment" %>
   </p>
 <% end %>
-<%= render :partial => 'partials/comment', :collection => @meals.comments %>
+
+
+<%= render :partial => 'comments/comment', :collection => @meal.comments %>
+</div>

@@ -1,0 +1,31 @@
+
+
+ul.cloud li a[data-weight="0"] { --size: 1; }
+ul.cloud li a[data-weight="1"] { --size: 1; }
+ul.cloud li a[data-weight="2"] { --size: 3; }
+ul.cloud li a[data-weight="3"] { --size: 6; }
+ul.cloud li a[data-weight="4"] { --size: 8; }
+ul.cloud li a[data-weight="5"] { --size: 9; }
+ul.cloud li a[data-weight="6"] { --size: 10; }
+ul.cloud li a[data-weight="7"] { --size: 11; }
+
+
+ul.cloud {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 4rem;
+
+}
+ul.cloud li a{
+    --size: 16;
+    font-size: calc(var(--size)* 0.4rem);
+    padding-top: 1rem;
+
+}
+
+
+

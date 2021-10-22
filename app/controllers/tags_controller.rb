@@ -1,10 +1,11 @@
 class TagsController < InheritedResources::Base
-  before_action :set_tag,  only: %i[ show edit update destroy ]
+  before_action :set_tag,  only: %i[ show edit update destroy create new]
   before_action :authenticate_user!
 
-
   def index
-    @tags = Tag.all
+    @page = params.fetch(:page, 0).to_i
+    @tags = Tag.offset(@page * PAGING_HELPER).limit(PAGING_HELPER)
+    @cloud_tags = Tag.all
   end
 
   def show

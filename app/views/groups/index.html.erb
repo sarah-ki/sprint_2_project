@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Groups</h1>
+<p class="lead">Here you can see all the Groups that have been created over the years. Feel free to check out and join any you like!</p>
 
-<table>
-  <thead>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
     <tr>
       <th>Members</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Pw</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,17 +16,16 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><ul>
+        <td><ul class="list-group">
           <% group.users.each do |user| %>
-            <li><%= user.email %></li>
+            <li class="list-group-item"><%= user.email %></li>
           <% end %>
         </ul></td>
         <td><%= group.name %></td>
         <td><%= group.description %></td>
-        <td><%= link_to 'Join Group', edit_group_path(group) %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', group, type: "button", class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_group_path(group), type: "button", class: "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, type: "button", class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +33,12 @@
 
 <br>
 
-<%= link_to 'New Group', new_group_path %>
+<%= link_to 'New Group', new_group_path , type: "button", class: "btn btn-primary"%>
+<br>
+<br>
+<br>
+<div class="btn-group">
+  <%= link_to '   Previous ',  groups_path(page: @page - 1), type: "button", class: "btn btn-primary" %>
+<%= link_to 'Next   ', groups_path(page: @page + 1), type: "button", class: "btn btn-primary" %>
+
+</div>

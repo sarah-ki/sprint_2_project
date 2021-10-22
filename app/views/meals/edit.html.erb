@@ -1,9 +1,28 @@
 <h1>Editing Meal</h1>
-
+<div class="form-control">
 <%= form_for @meals do |f| %>
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %><br />
+  </p>
+  <p>
+    <%= f.label :information %><br />
+    <%= f.text_area :recipe %><br />
+  </p>
+
+  <p>
+    created: <%= Time.now %>
+  </p>
+
+  <p>
+    <%= f.label :tag %><br />
+    <%= f.select :tag_ids, Tag.all.collect {|x|[x.name, x.id]}, {}, multiple:true %>
+    <br />
+  </p>
+
+  <p>
+    <%= f.label :due_date %><br />
+    <%= f.datetime_select :due_date %><br />
   </p>
 
   <p>
@@ -11,8 +30,6 @@
   </p>
 
   <%end %>
-
-
-
+</div>
 <%= link_to 'Show', @meal %> |
 <%= link_to 'Back', meals_path %>

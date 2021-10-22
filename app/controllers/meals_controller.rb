@@ -1,5 +1,6 @@
 class MealsController < InheritedResources::Base
   before_action :authenticate_user!
+  before_action :approval_check
 
   
     def meal_params
@@ -7,20 +8,21 @@ class MealsController < InheritedResources::Base
     end
 
     def index
-      @meals = Meal.all
+      @page = params.fetch(:page, 0).to_i
+      @meals = Meal.offset(@page * PAGING_HELPER).limit(PAGING_HELPER)
     end
 
     def show
-      @meals = Meal.find( params[:id] )
-      @comment = Comment.new(:meal => @meals)
+      @meal = Meal.find( params[:id] )
+      @comment = Comment.new(:meal => @meal)
     end
 
     def edit
-
+      @meals = Meal.find( params[:id] )
     end
 
     def update
-
+      @meals = Meal.edit(params[:id])
     end
 
     def new
@@ -29,9 +31,10 @@ class MealsController < InheritedResources::Base
 
     def create
       @meals = Meal.new(meal_params)
-      @meals.user = current_user
+      @meals.user = current_user.email
       if @meals.save
         MealMailer.with(new_title: @meals.title).meal_created.deliver_now
+
         redirect_to meals_path, notice: 'Success'
       else
         render 'new'

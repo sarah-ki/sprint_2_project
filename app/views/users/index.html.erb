@@ -1,0 +1,10 @@
+<h1>Block or unblock Users</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.email %>
+      <%=link_to 'approve', approve_user_path(user.id)%>
+      <%=link_to 'disapprove', disapprove_user_path(user.id)%>
+    </li>
+  <% end %>
+</ul>

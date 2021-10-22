@@ -1,7 +1,26 @@
 <h1>Editing Group</h1>
 
+<p class="lead">Here you are able to edit a groups attributes.</p>
+<div class="form-group">
+  <%= form_for @group do |form| %>
+    <div class="mb-3 row">
+    <%= form.label :members %>
+    <%= form.select :user_ids,  User.all.collect {|x| [ x.email, x.id]} ,{},  {multiple: true, class: "form-select"} %>
+    </div>
+    <div class="mb-3 row">
+    <%= form.label :name %>
+    <%= form.text_field :name,class: "form-control" %>
+    </div>
+    <div class="mb-3 row">
+    <%= form.label :description %>
+    <%= form.text_area :description,class: "form-control" %>
+    </div>
+    <div class="mb-3 row">
+      <div class="col-2">
+    <%= form.submit class: "btn btn-primary"%></div>
+    </div>
+  <% end  %>
+</div>
+<%= link_to 'Back', groups_path, class: "btn btn-link", type: "button"%>
+<%= link_to 'Show', @group, class: "btn btn-link ml-3", type: "button"%>
 
-
-
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>

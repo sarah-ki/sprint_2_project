@@ -2,6 +2,7 @@ do /home/franke/RubymineProjects/sprint_2_project/bin/bundle exec /usr/share/rvm
 Ruby enVironment Manager 1.29.12 (manual) (c) 2009-2020 Michal Papis, Piotr Kuczynski, Wayne E. Seguin
 
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+                             users_index GET    /users/index(.:format)                                                                            users#index
                                     tags GET    /tags(.:format)                                                                                   tags#index
                                          POST   /tags(.:format)                                                                                   tags#create
                                  new_tag GET    /tags/new(.:format)                                                                               tags#new
@@ -28,7 +29,7 @@ Ruby enVironment Manager 1.29.12 (manual) (c) 2009-2020 Michal Papis, Piotr Kucz
                    new_user_confirmation GET    /users/confirmation/new(.:format)                                                                 confirmations#new
                        user_confirmation GET    /users/confirmation(.:format)                                                                     confirmations#show
                                          POST   /users/confirmation(.:format)                                                                     confirmations#create
-                              join_group GET    /groups/:id/join(.:format)                                                                        groups#join
+                              join_group POST   /groups/:id/join(.:format)                                                                        groups#join
                              leave_group GET    /groups/:id/leave(.:format)                                                                       groups#leave
                                   groups GET    /groups(.:format)                                                                                 groups#index
                                          POST   /groups(.:format)                                                                                 groups#create
@@ -46,6 +47,14 @@ Ruby enVironment Manager 1.29.12 (manual) (c) 2009-2020 Michal Papis, Piotr Kucz
                                          PATCH  /comments/:id(.:format)                                                                           comments#update
                                          PUT    /comments/:id(.:format)                                                                           comments#update
                                          DELETE /comments/:id(.:format)                                                                           comments#destroy
+                           meal_comments GET    /meals/:meal_id/comments(.:format)                                                                comments#index
+                                         POST   /meals/:meal_id/comments(.:format)                                                                comments#create
+                        new_meal_comment GET    /meals/:meal_id/comments/new(.:format)                                                            comments#new
+                       edit_meal_comment GET    /meals/:meal_id/comments/:id/edit(.:format)                                                       comments#edit
+                            meal_comment GET    /meals/:meal_id/comments/:id(.:format)                                                            comments#show
+                                         PATCH  /meals/:meal_id/comments/:id(.:format)                                                            comments#update
+                                         PUT    /meals/:meal_id/comments/:id(.:format)                                                            comments#update
+                                         DELETE /meals/:meal_id/comments/:id(.:format)                                                            comments#destroy
                                    meals GET    /meals(.:format)                                                                                  meals#index
                                          POST   /meals(.:format)                                                                                  meals#create
                                 new_meal GET    /meals/new(.:format)                                                                              meals#new
@@ -62,17 +71,12 @@ Ruby enVironment Manager 1.29.12 (manual) (c) 2009-2020 Michal Papis, Piotr Kucz
                                          PATCH  /dashboard/:id(.:format)                                                                          dashboard#update
                                          PUT    /dashboard/:id(.:format)                                                                          dashboard#update
                                          DELETE /dashboard/:id(.:format)                                                                          dashboard#destroy
-                                         GET    /tags(.:format)                                                                                   tags#index
-                                         POST   /tags(.:format)                                                                                   tags#create
-                                         GET    /tags/new(.:format)                                                                               tags#new
-                                         GET    /tags/:id/edit(.:format)                                                                          tags#edit
-                                         GET    /tags/:id(.:format)                                                                               tags#show
-                                         PATCH  /tags/:id(.:format)                                                                               tags#update
-                                         PUT    /tags/:id(.:format)                                                                               tags#update
-                                         DELETE /tags/:id(.:format)                                                                               tags#destroy
                               home_index GET    /home/index(.:format)                                                                             home#index
                                     root GET    /                                                                                                 home#index
                                   search GET    /search(.:format)                                                                                 meals#search
+                                   users GET    /users(.:format)                                                                                  users#index
+                            approve_user GET    /users/:id/approve(.:format)                                                                      users#approve_user
+                         disapprove_user GET    /users/:id/disapprove(.:format)                                                                   users#disapprove_user
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create
