@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :user_groups_joins
   has_many :groups, through: :user_groups_joins
 
+  # validation regelt Devise
+
 end

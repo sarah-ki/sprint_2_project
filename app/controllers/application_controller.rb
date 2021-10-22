@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
-  respond_to :js, :json
   helper_method :all_meals
   helper_method :all_groups
   PAGING_HELPER = 10
+  respond_to :js, :html, :json
+
+
 
   def all_meals
     @meals = Meal.all

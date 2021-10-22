@@ -1,4 +1,4 @@
-class GroupsController < InheritedResources::Base
+class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy join leave]
   before_action :authenticate_user!
   before_action :approval_check
@@ -8,6 +8,31 @@ class GroupsController < InheritedResources::Base
     def group_params
       params.require(:group).permit(:name, :description, :pw, :id, user_ids: [])
     end
+
+  def new
+    @group = Group.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @group.update(group_params)
+      redirect_to groups_path, notice: 'Group has been edited'
+    else
+      render 'edit'
+    end
+  end
+
+  def create
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to groups_path, notice: 'Success creating new Group'
+    else
+      render 'new'
+      flash[:alert] = "There was an error creating a new group. Please try again or contact an admin!"
+    end
+  end
 
   def index
     @page = params.fetch(:page, 0).to_i
@@ -35,8 +60,10 @@ class GroupsController < InheritedResources::Base
 
   end
 
-  def leave
-
+  def destroy
+    @group.destroy
+    redirect_to groups_path
   end
+
 
 end

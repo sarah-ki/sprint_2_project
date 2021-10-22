@@ -2,53 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9cf3735-6c67-4fd5-8e71-9b593600ecd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/comments/_comment.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sprint_2_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sprint_2_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/comments.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/dashboard.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/groups.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/meals.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/tags.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/comments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/comments_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/groups_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/groups_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/meals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/meals_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/tags_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tags_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/user_group_joins_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/application_record.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/application_record.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/comment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/comment.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/group.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/group.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/meal.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/meal.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/tag.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tag.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/change_data.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/login.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/my_meals.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/my_tags.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/statistics.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/join_group.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/meal_mailer/meal_created.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meal_mailer/meal_created.text.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/meals/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/meals/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/meals/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/meals/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/meals/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/_comment.html.erb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tags/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +25,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="tests_and_fixes" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -309,7 +283,7 @@
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sprint_2_project@Development__sprint_2_project.rcov" NAME="Development: sprint_2_project Coverage Results" MODIFIED="1634830890946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sprint_2_project" />
+    <SUITE FILE_PATH="coverage/sprint_2_project@Development__sprint_2_project.rcov" NAME="Development: sprint_2_project Coverage Results" MODIFIED="1634906972587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sprint_2_project" />
     <SUITE FILE_PATH="coverage/sprint_2_project@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1634645659952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sprint_2_project" />
   </component>
 </project>

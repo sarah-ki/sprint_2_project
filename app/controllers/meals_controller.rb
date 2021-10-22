@@ -1,4 +1,4 @@
-class MealsController < InheritedResources::Base
+class MealsController < ApplicationController
   before_action :authenticate_user!
   before_action :approval_check
 
@@ -18,11 +18,16 @@ class MealsController < InheritedResources::Base
     end
 
     def edit
-      @meals = Meal.find( params[:id] )
+      @meal = Meal.find( params[:id] )
     end
 
     def update
-      @meals = Meal.edit(params[:id])
+      @meal = Meal.find( params[:id] )
+      if @meal.update(meal_params)
+        redirect_to meals_path, notice: 'Meals has been edited'
+      else
+        render 'edit'
+      end
     end
 
     def new
@@ -42,7 +47,8 @@ class MealsController < InheritedResources::Base
     end
 
     def destroy
-
+      @meal = Meal.find(params[:id])
+      @meal.destroy
     end
 
     def search

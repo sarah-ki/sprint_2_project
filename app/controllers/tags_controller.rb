@@ -1,5 +1,5 @@
-class TagsController < InheritedResources::Base
-  before_action :set_tag,  only: %i[ show edit update destroy create new]
+class TagsController < ApplicationController
+  before_action :set_tag,  only: %i[ show destroy update]
   before_action :authenticate_user!
 
   def index
@@ -13,13 +13,43 @@ class TagsController < InheritedResources::Base
     @meals = @tag.meal_ids
   end
 
+  def new
+    @tag = Tag.new
+  end
+
+  def create
+    @tag = Tag.new(tag_params)
+    if @tag.save
+      redirect_to tags_path, notice: 'Success creating new tag'
+    else
+      render 'new'
+      flash[:alert] = "There was an error creating a new tag. Please try again or contact an admin!"
+    end
+  end
+
   def set_tag
     @tag = Tag.find(params[:id])
   end
 
   def add_use
-
     @tag.uses += 1
+  end
+
+  def update
+    if @tag.update(tag_params)
+      redirect_to tags_path, notice: "Tag has been edited"
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @tag = Tag.find(params[:id])
+  end
+
+  def destroy
+    @tag.destroy
+    redirect_to tags_path
   end
 
   private
